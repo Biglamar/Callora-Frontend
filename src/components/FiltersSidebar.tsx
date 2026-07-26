@@ -44,7 +44,7 @@ function FilterGroup({
   return (
     <div
       className={`filter-group ${collapsed ? "filter-group--collapsed" : ""}`}
-      style={{ marginBottom: 12 }}
+      style={{ marginBottom: "var(--mkt-space-lg, 12px)" }}
     >
       <button
         type="button"
@@ -65,7 +65,7 @@ function FilterGroup({
         id={`filter-panel-${storageKey}`}
         className="filter-group__panel"
         hidden={collapsed}
-        style={{ marginTop: 8 }}
+        style={{ marginTop: "var(--mkt-space-md, 8px)" }}
         data-testid={`filter-panel-${storageKey}`}
       >
         {children}
@@ -143,14 +143,14 @@ export default function FiltersSidebar({
         storageKey="categories"
         prefersReducedMotion={prefersReducedMotion}
       >
-        <div className="filter-options" style={{ display: "grid", gap: 8 }}>
+        <div className="filter-options" style={{ display: "grid", gap: "var(--mkt-space-md, 8px)" }}>
           {ALL_CATEGORIES.map((c) => {
             const id = `category-${c.replace(/\s+/g, "-").toLowerCase()}`;
             return (
               <div
                 key={c}
                 className="filter-option"
-                style={{ display: "flex", gap: 8, alignItems: "center" }}
+                style={{ display: "flex", gap: "var(--mkt-space-md, 8px)", alignItems: "center" }}
               >
                 <input
                   id={id}
@@ -178,8 +178,8 @@ export default function FiltersSidebar({
         storageKey="price"
         prefersReducedMotion={prefersReducedMotion}
       >
-        <div style={{ display: "grid", gap: 8 }}>
-          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <div style={{ display: "grid", gap: "var(--mkt-space-md, 8px)" }}>
+          <div style={{ display: "flex", gap: "var(--mkt-space-md, 8px)", alignItems: "center" }}>
             <label
               htmlFor="filter-min-price"
               className="filter-label"
@@ -205,7 +205,7 @@ export default function FiltersSidebar({
               style={{ flex: 1, minWidth: 0 }}
             />
           </div>
-          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "var(--mkt-space-md, 8px)", alignItems: "center" }}>
             <label
               htmlFor="filter-max-price"
               className="filter-label"
@@ -256,7 +256,7 @@ export default function FiltersSidebar({
         storageKey="popularity"
         prefersReducedMotion={prefersReducedMotion}
       >
-        <div className="filter-popularity" style={{ marginTop: 8 }}>
+        <div className="filter-popularity" style={{ marginTop: "var(--mkt-space-md, 8px)" }}>
           <Dropdown<PopularityValue>
             id="filters-popularity"
             value={popularity as PopularityValue}
@@ -284,9 +284,9 @@ export default function FiltersSidebar({
           className="filter-option"
           style={{
             display: "flex",
-            gap: 8,
+            gap: "var(--mkt-space-md, 8px)",
             alignItems: "center",
-            marginTop: 8,
+            marginTop: "var(--mkt-space-md, 8px)",
           }}
         >
           <input
@@ -318,8 +318,8 @@ export default function FiltersSidebar({
           <div
             data-testid="filters-zero-results"
             style={{
-              margin: "12px 0 12px",
-              paddingTop: "12px",
+              margin: "var(--mkt-space-lg, 12px) 0",
+              paddingTop: "var(--mkt-space-lg, 12px)",
               borderTop: "1px solid var(--line)",
             }}
             role="status"
@@ -334,7 +334,7 @@ export default function FiltersSidebar({
         )}
 
       {/* ── Clear ──────────────────────────────────────────────────────── */}
-      <div style={{ marginTop: 8 }}>
+      <div style={{ marginTop: "var(--mkt-space-md, 8px)" }}>
         <button className="ghost-button" onClick={clearFilters}>
           Clear filters
         </button>
@@ -379,7 +379,7 @@ export default function FiltersSidebar({
               background: "var(--surface, #fff)",
               borderTopLeftRadius: 12,
               borderTopRightRadius: 12,
-              padding: 16,
+              padding: "var(--mkt-space-xl, 16px)",
               overflow: "auto",
             }}
           >

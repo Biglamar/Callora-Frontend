@@ -384,7 +384,7 @@ describe("FiltersSidebar", () => {
       );
       const block = screen.getByTestId("filters-zero-results") as HTMLElement;
       expect(block.style.borderTop).toMatch(/var\(--line\)/);
-      expect(block.style.paddingTop).toBe("12px");
+      expect(block.style.paddingTop).toMatch(/var\(--mkt-space-lg/);
     });
 
     it("zero-results wrapper keeps role='status' and aria-live='polite' for assistive tech", () => {
